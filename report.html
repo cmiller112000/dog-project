@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>dog_app</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>dog_app</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11,8 +13,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,6 +1109,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2535,6 +2538,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,6 +3029,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8755,9 +8760,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,14 +8962,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8990,16 +8986,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9136,9 +9122,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9228,9 +9211,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9275,9 +9255,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9574,7 +9551,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9595,6 +9571,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11265,7 +11246,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11577,7 +11558,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11591,9 +11571,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11654,10 +11631,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11668,11 +11643,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11855,18 +11828,14 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Using TensorFlow backend.
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>There are 133 total dog categories.
 There are 8351 total dog images.
@@ -11916,9 +11885,7 @@ There are 836 test dog images.
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>There are 13233 total human images.
 </pre>
@@ -11986,18 +11953,14 @@ There are 836 test dog images.
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Number of faces detected: 3
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -13461,9 +13424,7 @@ AAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Percent of Human Faces in Human_Files: 99
 Percent of Human Faces in Dof_Files: 11
@@ -13694,9 +13655,7 @@ $$<p>Here, <code>nb_samples</code> is the number of samples, or number of images
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Percent of dogs in Human_Files: 0
 Percent of dogs in Dog_Files: 100
@@ -13790,9 +13749,7 @@ Percent of dogs in Dog_Files: 100
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100%|██████████| 6680/6680 [00:58&lt;00:00, 114.13it/s]
 100%|██████████| 835/835 [00:06&lt;00:00, 127.56it/s]
@@ -13820,6 +13777,14 @@ Percent of dogs in Dog_Files: 100
 <p><strong>Question 4:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  If you chose to use the hinted architecture above, describe why you think that CNN architecture should work well for the image classification task.</p>
 <p><strong>Answer:</strong> 
 I started with the example architecture used in the lecture jupyter notebooks, then added additional Conv2D and MaxPooling layers with higher number of filters until a reached a performance that met the criteria.   Seems more layers helps.  Though data augmentation likely would have helped as well.</p>
+<p>The final architecture I settled on includes:
+2 sequences of Conv2D and MaxPooling layers, with 64 filters, kernel size of 3, padding of same to ensure consistent size, and a relu activation function.</p>
+<p>To minimize overfiting, I followed this by a 25% dropout layer.</p>
+<p>2 sequences of Conv2D and MaxPooling layers, with 32 filters, kernel size of 3, padding of same to ensure consistent size, and a relu activation function.</p>
+<p>Again followed up by another 25% dropout layer.</p>
+<p>The last few layers included flattening this output layer, and used a 512 unit relu layer, with one final 50% dropout layer, again to minimize overfitting.</p>
+<p>Finally, the softmax layer for the final 133 breed classifications.</p>
+<p>This proved to be an adequate architecture to start with, and was sufficient to meet the minimum 1% accuracy.  There is plenty of room for improvement</p>
 
 </div>
 </div>
@@ -13866,9 +13831,7 @@ I started with the example architecture used in the lecture jupyter notebooks, t
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -13975,9 +13938,7 @@ _________________________________________________________________
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/2
@@ -13990,9 +13951,7 @@ Epoch 2/2
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[15]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -14058,9 +14017,7 @@ Epoch 2/2
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test accuracy: 1.9139%
 </pre>
@@ -14129,9 +14086,7 @@ Epoch 2/2
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -14204,9 +14159,7 @@ _________________________________________________________________
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/20
@@ -14273,9 +14226,7 @@ Epoch 20/20
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[21]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -14341,9 +14292,7 @@ Epoch 20/20
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test accuracy: 38.7560%
 </pre>
@@ -14449,9 +14398,7 @@ test_{network} = bottleneck_features['test']</code></pre>
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(7, 7, 512)
 </pre>
@@ -14476,6 +14423,13 @@ test_{network} = bottleneck_features['test']</code></pre>
 <p><strong>Answer:</strong> 
 I first started with a few layers with filters set to 64, but that did not provide a high enough accuracy, so then I started adding layers increasing the filters until I started with 256 filters.   I also tried to incorporate maxpooling layers, but started running into input shape sizing issues with the previous layer.  The final maxpooling layer, I had to decrease the pool_size to 1.</p>
 <p>I also wanted to play with augmenting the data, but I could not figure out how to do that with using transfer learning.  The input size from the VGG19 model does not match the training image sizes, so the typical ImageDataGenerator process would not work.  This would be a good topic for a deeper dive for the class lectures.</p>
+<p>The architecture I used for this model was:</p>
+<p>A Conv2D layer with 256 filters, kernel_size of 3, padding of same, and activation function of relu followed by a MaxPooling layer with a pool_size of 2</p>
+<p>Next, another Conv2D layer with 128 filters, kernel_size of 2, padding of same and relu activation function, again follwed by a MaxPooling Layer with a pool size of 2</p>
+<p>This was followed by two Conv2D layers, one with 64 filters, the next with 32 filters.  This sequence was followed by a MaxPooling layer with a pool_size of 1</p>
+<p>Next was a sequence of two more Conv2D layers, one with 32 filters, the next with 16, followed by a GlobalAveragePooling layer for dimension reduction.</p>
+<p>The last layer, again is our softmax layer to classify the 133 dog breeds.</p>
+<p>This architecture proved good to get the required 60% accuracy.</p>
 
 </div>
 </div>
@@ -14517,9 +14471,7 @@ I first started with a few layers with filters set to 64, but that did not provi
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #   
@@ -14618,9 +14570,7 @@ _________________________________________________________________
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/10
@@ -14657,9 +14607,7 @@ Epoch 10/10
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[37]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[37]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -14728,9 +14676,7 @@ Epoch 10/10
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test accuracy: 60.2871%
 </pre>
@@ -14890,9 +14836,7 @@ Epoch 10/10
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Enter input image file name or none to randomly selct them: 
 dogImages/test/026.Black_russian_terrier/Black_russian_terrier_01849.jpg
@@ -14901,9 +14845,7 @@ This is a dog picture with a breed of: Black_russian_terrier
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -17714,9 +17656,7 @@ gg==
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>dogImages/test/062.English_setter/English_setter_04399.jpg
 This is a dog picture with a breed of: Cocker_spaniel
@@ -17724,9 +17664,7 @@ This is a dog picture with a breed of: Cocker_spaniel
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -19898,9 +19836,7 @@ wXKsxI/lWI7lWJ5gOVbix3Isx3IsT7AcK/FjOZZjOZYnWP5fl0L4Bn8n84QAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>dogImages/test/019.Bedlington_terrier/Bedlington_terrier_01369.jpg
 This is a dog picture with a breed of: Afghan_hound
@@ -19908,9 +19844,7 @@ This is a dog picture with a breed of: Afghan_hound
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -23139,9 +23073,7 @@ rgE1nf3sM3R2xMeBl4CvA8PFtYIuwugC8GPgoZOe/w24/w/R2Rx/BPxwsX3idpLB4r7uA36wkMN5
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>dogImages/test/087.Irish_terrier/Irish_terrier_05903.jpg
 This is a dog picture with a breed of: Irish_terrier
@@ -23149,9 +23081,7 @@ This is a dog picture with a breed of: Irish_terrier
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -26119,9 +26049,7 @@ YII=
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>dogImages/test/090.Italian_greyhound/Italian_greyhound_06114.jpg
 This is a dog picture with a breed of: Dogue_de_bordeaux
@@ -26129,9 +26057,7 @@ This is a dog picture with a breed of: Dogue_de_bordeaux
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -26915,9 +26841,7 @@ gg==
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>lfw/Gray_Davis/Gray_Davis_0013.jpg
 This picture is of a human and they look like a Greater_swiss_mountain_dog
@@ -26925,9 +26849,7 @@ This picture is of a human and they look like a Greater_swiss_mountain_dog
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -28039,9 +27961,7 @@ eKnx/wGceHSyAGbf+AAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>lfw/Martin_Scorsese/Martin_Scorsese_0004.jpg
 This picture is of a human and they look like a Dogue_de_bordeaux
@@ -28049,9 +27969,7 @@ This picture is of a human and they look like a Dogue_de_bordeaux
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -29278,9 +29196,7 @@ ibA4oRM6oX3R/w+3r/juYIZ3jQAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>lfw/Zdravko_Mucic/Zdravko_Mucic_0001.jpg
 This picture is of a human and they look like a Dogue_de_bordeaux
@@ -29288,9 +29204,7 @@ This picture is of a human and they look like a Dogue_de_bordeaux
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -30608,9 +30522,7 @@ vWSxF3uxF+8r9pLFXuzFXryv2EsWe7EXe/G+4v8Dj0FsNG7D/tgAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>lfw/Iain_Anderson/Iain_Anderson_0001.jpg
 This picture is of a human and they look like a Dogue_de_bordeaux
@@ -30618,9 +30530,7 @@ This picture is of a human and they look like a Dogue_de_bordeaux
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -31798,9 +31708,7 @@ oCuCswgEAl0RnEUgEOiK4CwCgUBX/A9lXhfqlmsgLgAAAABJRU5ErkJggg==
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>lfw/Abdullatif_Sener/Abdullatif_Sener_0001.jpg
 This picture is of a human and they look like a Entlebucher_mountain_dog
@@ -31808,9 +31716,7 @@ This picture is of a human and they look like a Entlebucher_mountain_dog
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -32944,6 +32850,10 @@ yIVcyFPJhbG4kAu5kKeSC2NxIRdyIU8lF8biQi7kQp5KLozFhVzIhTyVXBiLC7mQC3kq+X+4iWCX
 <p><strong>Question 6:</strong> Is the output better than you expected :) ?  Or worse :( ?  Provide at least three possible points of improvement for your algorithm.</p>
 <p><strong>Answer:</strong> Worse than I expected, but they are still reasonable.  The 3 dog pictures are of 'mutts' of the poodle descent, and in one case a 'wet dog' at that.   So while not spot on, the breed predictions are still similar.</p>
 <p>It correctly did not miss-detect the cat picture for a dog.   What I also found interesting is that it did not detect the baby picture as a human face.   I imagine most of the images that were used to train the VGG19 models did not include a log of baby pictures when classifying human faces.  I expect if there were more, this may have worked better.</p>
+<p>3 possible points for improvement are:</p>
+<p>Include more baby pictures in the training set of human face pictures.
+Include more pictures of dogs in more active, variant poses, such as wet dogs on the beach.
+Augment the training data by using the ImageDataGenerator feature.</p>
 
 </div>
 </div>
@@ -32980,9 +32890,7 @@ yIVcyFPJhbG4kAu5kKeSC2NxIRdyIU8lF8biQi7kQp5KLozFhVzIhTyVXBiLC7mQC3kq+X+4iWCX
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>/home/aind2/dog-project/myImages/img_5305.jpg
 This is a dog picture with a breed of: Otterhound
@@ -32990,9 +32898,7 @@ This is a dog picture with a breed of: Otterhound
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -34291,9 +34197,7 @@ kaL7nVAsAAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>/home/aind2/dog-project/myImages/img_0742.jpg
 This is a dog picture with a breed of: Portuguese_water_dog
@@ -34301,9 +34205,7 @@ This is a dog picture with a breed of: Portuguese_water_dog
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -35945,9 +35847,7 @@ W7EAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>/home/aind2/dog-project/myImages/img_0875.jpg
 Error, this picture did not detect a dog nor a human face!
@@ -35955,9 +35855,7 @@ Error, this picture did not detect a dog nor a human face!
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -37406,9 +37304,7 @@ LuMBx/8Hjm9E3HTvKmoAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>/home/aind2/dog-project/myImages/img_0885.jpg
 This is a dog picture with a breed of: Cocker_spaniel
@@ -37416,9 +37312,7 @@ This is a dog picture with a breed of: Cocker_spaniel
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -39707,9 +39601,7 @@ bnGLrwn/L8wW80xj/vKTAAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>/home/aind2/dog-project/myImages/img_0998.jpg
 Error, this picture did not detect a dog nor a human face!
@@ -39717,9 +39609,7 @@ Error, this picture did not detect a dog nor a human face!
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -41547,9 +41437,7 @@ sjWoW9nKVrbyDsnWoG5lK1vZyjskW4O6la1sZSvvkPx/1yqi936UtlMAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>/home/aind2/dog-project/myImages/img_1078.jpg
 This picture is of a human and they look like a Chesapeake_bay_retriever
@@ -41557,9 +41445,7 @@ This picture is of a human and they look like a Chesapeake_bay_retriever
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -42888,9 +42774,7 @@ Pqh69Fgy+qDq0WPJ6IOqR48low+qHj2WjD6oevRYMv4DlL9Ix9JVzyAAAAAASUVORK5CYII=
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>/home/aind2/dog-project/myImages/img_0662.jpg
 This picture is of a human and they look like a Chinese_crested
@@ -42898,9 +42782,7 @@ This picture is of a human and they look like a Chinese_crested
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -44281,9 +44163,7 @@ uIp3EFcT5yqu4h3E1cS5iqt4B/H/A69+Z4zXmVzsAAAAAElFTkSuQmCC
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>/home/aind2/dog-project/myImages/mom.jpg
 This picture is of a human and they look like a Chinese_crested
@@ -44291,9 +44171,7 @@ This picture is of a human and they look like a Chinese_crested
 </div>
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -46055,8 +45933,4 @@ NT4WroPFNa5xjY+F62BxjWtc42PhOlhc4xrX+Fj4fwEnBUjISNx8vgAAAABJRU5ErkJggg==
     </div>
   </div>
 </body>
-
- 
-
-
 </html>
